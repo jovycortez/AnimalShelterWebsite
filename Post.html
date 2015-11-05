@@ -4,8 +4,6 @@
 	<head>
 		<title> Form </title>
 		<meta charset = "utf-8" />
-
-</script> 
 	</head>
 	
 	<body>
@@ -14,9 +12,19 @@
           <td> Pet Name: </td>  
           <td> <input type = "text"  name = "petname" size = "15" /></td>
         </tr>
-
+		
+		<script type="text/javascript">
+			function CheckType(val){
+			var element=document.getElementById('type');
+			if(val=='Other')
+				element.style.display='block';
+			else  
+				element.style.display='none';
+			}
+		</script>
+		
         <tr>
-          <td> Pet type: </td>
+          <td> Pet Type: </td>
           <td> 	<select name = "type" onchange='CheckType(this.value);'>
 					<option> -Choose pet type-</option>
 					<option value="Dog">Dog</option>
@@ -27,16 +35,16 @@
 					<option value="Amphibian">Amphibian</option>
 					<option value="Other">Other</option>
 				</select>
+				<input type="text" name="type" id="type" style='display:none;'/>
 				
 				</td>
         </tr>
         <tr>
-			<td> Description: </td>
-        
-			<td> <textarea rows = "4" cols = "50">(Please write a breif description of the pet
-			please include pet type if not provided above)
+			<td> Description: </td>        
+			<td> <textarea style="resize:none" rows = "4" cols = "50">Please write a brief description of the pet please include pet type if not provided above)
 			</textarea> </td>
         </tr>
         </table> 
 	</body>
 </html>
+\ No newline at end of file
