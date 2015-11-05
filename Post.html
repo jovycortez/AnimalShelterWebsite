@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- post.html is a html full of text -->
+<html lang = "en">
+	<head>
+		<title> Form </title>
+		<meta charset = "utf-8" />
+
+</script> 
+	</head>
+	
+	<body>
+		<table>
+        <tr>
+          <td> Pet Name: </td>  
+          <td> <input type = "text"  name = "petname" size = "15" /></td>
+        </tr>
+
+        <tr>
+          <td> Pet type: </td>
+          <td> 	<select name = "type" onchange='CheckType(this.value);'>
+					<option> -Choose pet type-</option>
+					<option value="Dog">Dog</option>
+					<option value="Cat">Cat</option>
+					<option value="Bird">Bird</option>
+					<option value="Rabbit">Rabbit</option>
+					<option value="Reptile">Reptile</option>
+					<option value="Amphibian">Amphibian</option>
+					<option value="Other">Other</option>
+				</select>
+				
+				</td>
+        </tr>
+        <tr>
+			<td> Description: </td>
+        
+			<td> <textarea rows = "4" cols = "50">(Please write a breif description of the pet
+			please include pet type if not provided above)
+			</textarea> </td>
+        </tr>
+        </table> 
+	</body>
+</html>
