@@ -7,6 +7,7 @@
 	</head>
 	
 	<body>
+		<form action = "post.php" method ="post"> 
 		<table>
         <tr>
           <td> Pet Name: </td>  
@@ -17,34 +18,102 @@
 			function CheckType(val){
 			var element=document.getElementById('type');
 			if(val=='Other')
-				element.style.display='block';
+				element.style.display='table-row';
 			else  
 				element.style.display='none';
 			}
 		</script>
 		
         <tr>
-          <td> Pet Type: </td>
-          <td> 	<select name = "type" onchange='CheckType(this.value);'>
-					<option> -Choose pet type-</option>
-					<option value="Dog">Dog</option>
-					<option value="Cat">Cat</option>
-					<option value="Bird">Bird</option>
-					<option value="Rabbit">Rabbit</option>
-					<option value="Reptile">Reptile</option>
-					<option value="Amphibian">Amphibian</option>
-					<option value="Other">Other</option>
-				</select>
-				<input type="text" name="type" id="type" style='display:none;'/>
-				
-				</td>
+            <td> Pet Type: </td>
+            <td> <select name = "type" onchange='CheckType(this.value);' >
+				<option> -Choose pet type-</option>
+				<option value="Dog">Dog</option>
+				<option value="Cat">Cat</option>
+				<option value="Bird">Bird</option>
+				<option value="Rabbit">Rabbit</option>
+				<option value="Reptile">Reptile</option>
+				<option value="Amphibian">Amphibian</option>
+				<option value="Other">Other</option>
+			</select>
+			<input type="text" name="type" id="type" style='display:none;'/>				
+			</td>
         </tr>
+		
+		<tr>
+          <td> Breed: </td>  
+          <td> <input type = "text"  name = "breed" size = "15" /></td>
+        </tr>
+		
+		<tr>
+          <td> Color: </td>  
+          <td> <input type = "text"  name = "color" size = "15" /></td>
+        </tr>
+		
+		<tr>
+          <td> Weight (lbs): </td>  
+          <td> <input type = "text"  name = "weight" size = "15" /></td>
+        </tr>
+		
+		
+		<tr>
+			<td> Gender: </td>  
+			<td> <input type = "radio"  name = "gender" value = "Male" />Male</td>
+        </tr>
+		<tr>
+			<td></td>
+			<td> <input type = "radio"  name = "gender" value = "Female" />Female</td>
+		</tr>
+		
+		<tr>
+			<td> Address: </td>  
+			<td> <input type = "text"  name = "address" size = "15" /></td>
+        </tr>
+		
+		<tr>
+			<td> City: </td>  
+			<td> <input type = "text"  name = "city" size = "15" /></td>
+        </tr>
+		
+		<tr>
+			<td> State: </td>  
+			<td> <input type = "text"  name = "state" size = "2" maxlength = "2" /></td>
+        </tr>
+		
+		<tr>
+			<td> Zip Code: </td>  
+			<td> <input type = "text"  name = "zipcode" size = "5" maxlength = "5" /></td>
+        </tr>
+		
+		<tr>
+			<td> Date Found (mm/dd/yy): </td>  
+			<td> <input type = "text"  name = "address" size = "8" maxlength="8" /></td>
+        </tr>
+		
+		<tr>
+			<td> Mixed Breed: </td>  
+			<td> <input type = "radio"  name = "mixbreed" value = "yes" />Yes</td>
+        </tr>
+		<tr>
+			<td></td>
+			<td> <input type = "radio"  name = "mixbreed" value = "no" />No</td>
+		</tr>
+		
+		<script type="text/javascript">			
+			function clearContents(element) {
+			if (element.value.localeCompare("Please write a brief description of the pet") == 0){
+				element.value = '';
+				}
+			}
+		</script>
+		</table>
+		<table> 
         <tr>
-			<td> Description: </td>        
-			<td> <textarea style="resize:none" rows = "4" cols = "50">Please write a brief description of the pet please include pet type if not provided above)
-			</textarea> </td>
+			<td> Description: </td>
+			<td> <textarea style="resize:none" rows = "4" cols = "50" onfocus="clearContents(this);">Please write a brief description of the pet</textarea> </td>
         </tr>
-        </table> 
+        </table>
+		<input type = "submit" value = "Submit Post" />
+		</form>
 	</body>
 </html>
-\ No newline at end of file
