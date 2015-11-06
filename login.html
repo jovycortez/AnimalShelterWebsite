@@ -3,30 +3,27 @@
 <head>
 	<title>Login</title>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="layout.css" />
 </head>
 <body>
-	<div class="content">
-		<form action="" method="post">
-			<table border="0">
-				<tr>
-					<td>Username</td>
-					<td><input type="text" name="userid" size="25" /></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><input type="password" name="pass" size="25" /></td>
-				</tr>
-				<tr>
-					<td colspan="2"><input type="submit" value="Login" /></td>
-				</tr>
-				<tr>
-					<td colspan="2"><a href="register.html">Not Registered yet? Sign up here (or something)</a></td>
-				</tr>
-				
-			</table>
-		</form>
-	</div>
+	<form action="login_script.php" method="post">
+		<table border="0">
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="username" size="25" /></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password" size="25" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Login" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><a href="registration.html">Not Registered yet? Sign up here</a></td>
+			</tr>
+			
+		</table>
+	</form>
 		
 </body>
 </html>
