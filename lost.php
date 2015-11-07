@@ -6,12 +6,10 @@
 </head>
 <body>
 
-		<h2>Lost pets</h2>
-	
 		<?php
 		
 			$section = "lost";
-			include 'section_list.php';
+			include ('list.php');
 			
 		?>
 		
