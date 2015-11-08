@@ -1,3 +1,12 @@
+<?php
+	
+	// Delete the cookie
+	setcookie("user_id", "", time() - 3600);
+
+	// Redirect to homepage
+	header( 'Location: index.php' );
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +14,6 @@
 	<meta charset="utf-8" />
 </head>
 <body>
-	<?php
-	
-		session_start();		
-		session_destroy();
-		
-		print "<p>You have been logged out.</p>";
-				
-	?>
+
 </body>
 </html>
