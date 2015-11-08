@@ -9,35 +9,24 @@
 	<body>
 		<div>
 		<form action = "post.php" method ="post">
+		
 		<table>
-        <tr>
+		<tr>
+			<td> <input type = "radio"  name = "section" value = "Found" />Found</td>
+			<td> <input type = "radio"  name = "section" value = "Lost" />Lost</td>
+			<td> <input type = "radio"  name = "section" value = "Rescued" />Rescued</td>
+		</tr>
+		</table>
+		
+		<table>
+		<tr>
           <td> Pet Name: </td>  
           <td> <input type = "text"  name = "petname" size = "15" /></td>
         </tr>
 		
-		<script type="text/javascript">
-			function CheckType(val){
-			var element=document.getElementById('type');
-			if(val=='Other')
-				element.style.display='table-row';
-			else  
-				element.style.display='none';
-			}
-		</script>
-		
         <tr>
             <td> Pet Type: </td>
-            <td> <select name = "type" onchange='CheckType(this.value);' required >
-					<option value="Dog">Dog</option>
-					<option value="Cat">Cat</option>
-					<option value="Bird">Bird</option>
-					<option value="Rabbit">Rabbit</option>
-					<option value="Reptile">Reptile</option>
-					<option value="Amphibian">Amphibian</option>
-					<option value="Other">Other</option>
-			</select>
-			<input type="text" name="type" id="type" style='display:none;' />				
-			</td>
+            <td> <input type = "text"  name = "type" size = "15" required /></td>
         </tr>
 		
 		<tr>
