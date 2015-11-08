@@ -3,7 +3,7 @@
 <head>
 	<title>Rescued pets</title>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="css\layout.css" />
+	<link rel="stylesheet" type="text/css" href="layout.css" />
 </head>
 <body>
 		<?php
