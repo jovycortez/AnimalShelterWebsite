@@ -3,12 +3,15 @@
 <head>
 	<title>Lost pets</title>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css\layout.css" />
 </head>
 <body>
 
 		<h2>Pet Profile</h2>
 	
 		<?php
+		
+		include ('navbar.php');
 
 		// Get form value
 		$petid = $_GET["petid"];

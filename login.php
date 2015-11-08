@@ -3,8 +3,14 @@
 <head>
 	<title>Login</title>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css\layout.css" />
 </head>
 <body>
+	
+	<?php
+		include ('navbar.php');
+	?>
+
 	<form action="login_script.php" method="post">
 		<table border="0">
 			<tr>
