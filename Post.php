@@ -24,8 +24,8 @@
 		// Get the tblLookup and clean it up (delete leading and trailing 
 		// whitespace and remove backslashes from magic_quotes_gpc)
 
-		$p_name = $_POST['petname'];
-		$p_type = $_POST['type'];
+		$pname = $_POST['petname'];
+		$ptype = $_POST['type'];
 		$breed = $_POST['breed'];
 		$color = $_POST['color'];
 		$weight = $_POST['weight'];
@@ -35,11 +35,27 @@
 		$state = $_POST['state'];
 		$zip = $_POST['zipcode'];
 		$date = $_POST['date'];
-		$mix_b = $_POST['mixbreed'];
-
+		$mixb = $_POST['mixbreed'];
+		$description = $_POST['description'];
 		
-		$result = mysql_query('INSERT INTO pets (pet_name, pet_type, gender, color, weight, address, city, state, zipcode, pet_description, is_mixed) 
-		VALUES($p_name , $p_type, $gender, $color, $weight, $address, $city, $state, $zip, 1111-11-11, pet_description, $mixbreed)');
+		if($pname == null){
+			$pname == '';
+		}
+		if($weight == null){
+			$weight == '';
+		}
+		if($address == null){
+			$address == '';
+		}
+		if(strcmp($mixb, "TRUE") == 0){
+			$mixb = TRUE;
+		}else{
+			$mixb = FALSE;
+		}
+		echo $ptype;
+		$query = "INSERT INTO PETS (pet_name, pet_type, color, weight, gender, address, city, state, zipcode, date_found, is_mixed, pet_description)
+			VALUES('$pname', '$ptype', '$color', '$weight', '$gender', '$address', '$city', '$state', '$zip', '$date', '$mixb', '$description')";
+		$result = mysql_query($query);
 		if (!$result) {
 			print "Error - the query could not be executed";
 				mysql_error();
