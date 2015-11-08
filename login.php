@@ -26,7 +26,7 @@
 					<td colspan="2"><input type="submit" value="Login" /></td>
 				</tr>
 				<tr>
-					<td colspan="2"><a href="signup.html">Not Registered yet? Sign up here</a></td>
+					<td colspan="2"><a href="signup.php">Not Registered yet? Sign up here</a></td>
 				</tr>
 			</table>
 		</form>
