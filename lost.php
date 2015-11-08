@@ -6,15 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="css\layout.css" />
 </head>
 <body>
-
 		<?php
-		
 			include ('navbar.php');
-		
-			$section = "lost";
-			include ('list.php');
-			
 		?>
-		
+
+		<div class="wrapper">
+			<?php
+				$section = "lost";
+				include ('list.php');
+			?>
+		</div>
 </body>
 </html>
