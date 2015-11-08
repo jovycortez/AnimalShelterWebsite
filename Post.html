@@ -28,13 +28,13 @@
         <tr>
             <td> Pet Type: </td>
             <td> <select name = "type" onchange='CheckType(this.value);' required >
-				<option value="Dog">Dog</option>
-				<option value="Cat">Cat</option>
-				<option value="Bird">Bird</option>
-				<option value="Rabbit">Rabbit</option>
-				<option value="Reptile">Reptile</option>
-				<option value="Amphibian">Amphibian</option>
-				<option value="Other">Other</option>
+					<option value="Dog">Dog</option>
+					<option value="Cat">Cat</option>
+					<option value="Bird">Bird</option>
+					<option value="Rabbit">Rabbit</option>
+					<option value="Reptile">Reptile</option>
+					<option value="Amphibian">Amphibian</option>
+					<option value="Other">Other</option>
 			</select>
 			<input type="text" name="type" id="type" style='display:none;' />				
 			</td>
@@ -47,15 +47,11 @@
 		
 		<tr>
 			<td> Mixed Breed: </td>  
-			<td> <input type = "radio"  name = "mixbreed" value = "yes" />Yes</td>
+			<td> <input type = "radio"  name = "mixbreed" value = "TRUE" />Yes</td>
         </tr>
 		<tr>
 			<td></td>
-			<td> <input type = "radio"  name = "mixbreed" value = "no" />No</td>
-		</tr>
-		<tr>
-			<td></td>
-			<td> <input type = "radio"  name = "mixbreed" value = "dontknow" />I don't know</td>
+			<td> <input type = "radio"  name = "mixbreed" value = "FALSE" />No</td>
 		</tr>
 		
 		<tr>
@@ -104,7 +100,7 @@
 
         <tr>
 			<td> Description: </td>
-			<td> <textarea style="resize:none" rows = "4" cols = "50" required placeholder="Briefly describe the pet" /></textarea></td>
+			<td> <textarea  name = "description" style="resize:none" rows = "4" cols = "50" required placeholder="Briefly describe the pet" /></textarea></td>
         </tr>
         </table>
 		<input type = "submit" value = "Submit" />
