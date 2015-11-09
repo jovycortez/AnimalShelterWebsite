@@ -2,13 +2,17 @@
 <!-- post.html is a html full of text -->
 <html lang = "en">
 	<head>
-		<title> Form </title>
+		<title>Post Form </title>
 		<meta charset = "utf-8" />
+		<link rel="stylesheet" type="text/css" href="layout.css" />
 	</head>
 	
 	<body>
+		<?php
+			include ('navbar.php');
+		?>
 
-		<div>
+		<div class="wrapper">
 		<form action = "post.php" method ="post">
 		
 		<table>
@@ -109,5 +113,8 @@
 		<input type = "submit" value = "Submit" />
 		</form>
 		</div>
+		<?php
+			include ('footer.php');
+		?>
 	</body>
 </html>

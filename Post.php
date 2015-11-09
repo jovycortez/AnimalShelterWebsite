@@ -3,11 +3,13 @@
 	<head>
 		<title> Form </title>
 		<meta charset = "utf-8" />
+		<link rel="stylesheet" type="text/css" href="layout.css" />
 	</head>
 	<body>
 	<?php
-
+	include ('navbar.php');
 	include('kozycorner.dbconfig.inc');
+	include ('footer.php');
 	
 	// Connect to MySQL	
 	$conn = mysqli_connect($hostname,$username, $password, $dbname);
@@ -139,11 +141,11 @@
 			print "Error - the query could not be executed";
 				mysql_error();
 			exit;	
-		}else{
-			print "The deed is done";
 		}
-
 		?>
+		<div class="wrapper">
+		<h1>You post has successfully been submitted!</h1>
+		</div>
 	</body>
 	</head>
 </html>

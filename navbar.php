@@ -9,7 +9,7 @@
 		<li><a href="rescued.php">Rescued</a></li>
 		<li><a href="found.php">Found</a></li>
 		<li><a href="lost.php">Lost</a></li>
-		<li><a href="post.html">Report</a></li>
+		<li><a href="postform.php">Report</a></li>
 		<li><a href="faq.html">FAQ</a></li>
 		<?php
 			if (isSet($_COOKIE["user_id"])) {
