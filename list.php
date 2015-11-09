@@ -9,10 +9,23 @@
 		 exit;
 	}
 	
-	// Temporarily put these variables here
+	// Default variables to wildcard (except $section!)
 	$pet_name = '%';
 	$pet_type = '%';
 	$breed_name = '%';
+	$color = '%';
+	$weight = '%';
+	$gender = '%';
+	$zipcode = '%';
+	
+	// Check URL to see if values were set
+	if (isSet($_GET["petname"]))	{ $pet_name = $_GET["petname"]; }
+	if (isSet($_GET["pettype"]))	{ $pet_type = $_GET["pettype"]; }
+	if (isSet($_GET["breedname"]))	{ $breed_name = $_GET["breedname"]; }
+	if (isSet($_GET["color"])) 		{ $color = $_GET["color"]; }
+	if (isSet($_GET["weight"])) 	{ $weight = $_GET["weight"]; }
+	if (isSet($_GET["gender"])) 	{ $gender = $_GET["gender"]; }
+	if (isSet($_GET["zipcode"])) 	{ $zipcode = $_GET["zipcode"]; }
 	
 	// Build query
 	$query = "SELECT * FROM pets
@@ -21,7 +34,11 @@
 			  WHERE section LIKE '$section' &&
 					pet_name LIKE '$pet_name' &&
 					pet_type LIKE '$pet_type' &&
-					breed_name LIKE '$breed_name'";
+					breed_name LIKE '$breed_name' &&
+					color LIKE '$color' &&
+					weight LIKE '$weight' &&
+					gender LIKE '$gender' &&
+					zipcode LIKE '$zipcode'";
 	
 	// Run query
 	$result = mysqli_query($conn, $query);
@@ -57,9 +74,9 @@
 			print "<img src=\"$image\" width=\"200\" height=\"150\" \>";
 			print "</div>";
 			
-			print "<div class=\"post\"><br />";			
-			print "<strong>$row[gender] $row[pet_type]</strong><br />";
-			print "$row[color]<br /><br />";
+			print "<div class=\"post\"><br />";		
+			print "<span class=\"title\">$row[color] $row[pet_type]</span><br />";
+			print "$row[breed_name]<br /><br />";
 			print "$sectionCaps around $row[city], $row[state]<br />";
 			print "on $row[date_found]";
 			print "</div>";

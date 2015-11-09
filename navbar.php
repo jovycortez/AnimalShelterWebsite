@@ -1,9 +1,5 @@
 	<div id="banner">
-		KozyCorner
-	</div>
-	
-	<div>
-    <img id="pets_image" src="images/AnimalCareBanner.jpg" width="1138" height="150">
+		<img id="pets_image" src="images/AnimalCareBanner.jpg" width="100%">
 	</div>
 	
 	<div id="navbar">
@@ -17,10 +13,10 @@
 		<li><a href="faq.php">FAQ</a></li>
 		<?php
 			if (isSet($_COOKIE["user_id"])) {
-				print "<li class=\"test\"><a href=\"logout.php\">Logout</a></li>";
+				print "<li class=\"account\"><a href=\"logout.php\">Logout</a></li>";
 			} else {
-				print "<li class=\"test\"><a href=\"login.php\">Login</a></li>";
-				print "<li class=\"test\"><a href=\"signup.php\">Register</a></li>";
+				print "<li class=\"account\"><a href=\"login.php\">Login</a></li>";
+				print "<li class=\"account\"><a href=\"signup.php\">Register</a></li>";
 			}
 		?>
 	</ul>

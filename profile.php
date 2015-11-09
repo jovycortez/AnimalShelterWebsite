@@ -28,7 +28,10 @@
 				 exit;
 			}
 			
-			$query = "SELECT * FROM PETS WHERE pet_id='$petid'";
+			$query = "SELECT * FROM pets
+					  INNER JOIN breed
+					  ON pets.breed_id=breed.breed_id
+					  WHERE pet_id='$petid'";
 			
 			// Run query
 			$result = mysqli_query($db, $query);
@@ -42,9 +45,11 @@
 			$num_fields = mysqli_num_fields($result);
 			$row = mysqli_fetch_assoc($result);
 			
+			$image = "images/default.png";
+			print "<img src=\"$image\" width=\"200\" height=\"150\" \><br />";
 			print "<b>Name:</b> $row[pet_name]<br />";
 			print "<b>Type:</b> $row[pet_type]<br />";
-			print "<b>Breed:</b> $row[breed_id]<br />";
+			print "<b>Breed:</b> $row[breed_name]<br />";
 			print "<b>Gender:</b> $row[gender]<br />";
 			print "<b>Color:</b> $row[color]<br />";
 			print "<b>Weight:</b> $row[weight] lbs<br />";

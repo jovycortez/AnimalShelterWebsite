@@ -6,17 +6,15 @@ body {
 
 /* Banner, navbar, and footer */
 #banner {
+	float: left;
 	width: 100%;
-	float: clear;
-	background-color: lightgrey;
-	padding: 40px 15px;
 }
 
-#pets_image{
-			display: block;
-	        margin-left: auto;
-            margin-right: auto;
-		   }
+#pets_image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 #navbar {
 	background-color: #00A2E8;
@@ -49,6 +47,14 @@ body {
 	background-color: #3C46C8;
 }
 
+.account {
+	background-color: #0071A2;
+}
+
+.account a:hover {
+	background-color: #1D2262 !important;
+}
+
 #footer {
 	background-color: grey;
 	color: white;
@@ -73,13 +79,11 @@ body {
 }
 
 .post-container {
-	border: 2px red solid;
 	width: 100%;
 	float: left;
 }
 
 .post {
-	border: 2px green solid;
 	float: left;
 	width: 25%;
 }
