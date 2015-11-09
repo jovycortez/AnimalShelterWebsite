@@ -7,6 +7,7 @@
 	</head>
 	
 	<body>
+
 		<div>
 		<form action = "post.php" method ="post">
 		
@@ -91,6 +92,19 @@
 			<td> Description: </td>
 			<td> <textarea  name = "description" style="resize:none" rows = "4" cols = "50" required placeholder="Briefly describe the pet" /></textarea></td>
         </tr>
+		<tr>
+			<td> Branch: </td>
+			<td> <select name = "branch">
+					<option value="na">Choose a Branch</option>
+					<option value="la">Los Angeles</option>
+					<option value="atl">Atlanta</option>
+					<option value="nyc">New York City</option>
+					<option value="dal">Dallas</option>
+					<option value="sea">Seattle</option>
+				</select>
+			</td>
+        </tr>
+		
         </table>
 		<input type = "submit" value = "Submit" />
 		</form>
