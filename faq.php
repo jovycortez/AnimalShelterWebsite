@@ -75,6 +75,8 @@ h1 {text-align: center;}
 </div>
 <!-- MAIN CONTENT ENDS -->
 
+<?php include ('footer.php'); ?>
+
 </body>
 </html>
 

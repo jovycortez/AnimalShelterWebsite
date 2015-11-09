@@ -80,15 +80,6 @@ body {
 	font-weight: bold;
 }
 
-#footer {
-	background-color: grey;
-	color: white;
-	width: 100%;
-	float: left;
-	text-align: center;
-	display:inline-block;
-}
-
 input[type="submit"] {
 	background-color: #00A2E8;
 	color: white;
@@ -103,4 +94,13 @@ input[type="submit"] {
 
 .button:hover {
 	background-color: #3C46C8;
+}
+#footer {
+	background-color: grey;
+	color: white;
+	width: 100%;
+	float: left;
+	text-align: center;
+	display:inline-block;
+	font-weight: bold;
 }
