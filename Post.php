@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="layout.css" />
 	</head>
 	<body>
+	
 	<?php
 	include ('navbar.php');
 	include('kozycorner.dbconfig.inc');
@@ -138,7 +139,28 @@
 			VALUES('$branch', '$breed', '$section', '$pname', '$ptype', '$color', '$weight', '$gender', '$address', '$city', '$state', '$zip', '$date', '$mixb', '$description')";
 		$result = mysqli_query($conn, $query);
 		if (!$result) {
-			print "Error - the query could not be executed";
+			print "Error - the insert query could not be executed";
+				mysql_error();
+			exit;	
+		}
+		
+		//Gets new pets post id
+		$query = "SELECT * FROM pets ORDER BY pet_id DESC LIMIT 1";
+		$result = mysqli_query($conn, $query);
+		if (!$result) {
+			print "Error - the latest query could not be executed";
+				mysql_error();
+			exit;	
+		}
+		$row = mysqli_fetch_assoc($result);
+		$petid = $row['pet_id'];
+		
+		//Links post_id to user
+		$userid = $_COOKIE["user_id"];
+		$query = "INSERT INTO mydb.users_pets (pet_id, user_id) VALUES ('$petid', '$userid')";
+		$result = mysqli_query($conn, $query);
+		if (!$result) {
+			print "Error - the latest query could not be executed";
 				mysql_error();
 			exit;	
 		}
