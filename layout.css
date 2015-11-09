@@ -11,6 +11,12 @@ body {
 	padding: 40px 15px;
 }
 
+#pets_image{
+			display: block;
+	        margin-left: auto;
+            margin-right: auto;
+		   }
+
 #navbar {
 	background-color: #00A2E8;
 	float: clear;
@@ -42,22 +48,6 @@ body {
 	background-color: #3C46C8;
 }
 
-#footer {
-	background-color: grey;
-	color: white;
-	width: 100%;
-	float: left;
-	
-}
-
-a:hover {
-	color: #30EFEF;
-}
-
-a {
-	color: #10D1D1;
-}
-
 .wrapper {
 	width: 80%;
 	margin: 0 auto;
@@ -78,37 +68,37 @@ a {
 	height: 250px;
 }
 
+.content h1, h2, h3, h4, h5, h6 {
+	color: grey;
+}
+
+.content p {
+	color: #C3C3C3;
+}
+
 .title {
 	font-weight: bold;
+}
+
+#footer {
+	background-color: grey;
+	color: white;
+	width: 100%;
+	float: left;
+	text-align: center;
+	display:inline-block;
 }
 
 input[type="submit"] {
 	background-color: #00A2E8;
 	color: white;
-	padding: 0.5em 1em;
-	border: 1px solid darkblue;
-}
-
-input[type="submit"]:hover {
-	background-color: #3C46C8;
-}
-
-input[type="reset"] {
-	background-color: lightgrey;
-	color: white;
-	padding: 0.5em 1em;
-	border: 1px solid black;
-}
-
-input[type="reset"]:hover {
-	background-color: grey;
+	padding: 0.5em
 }
 
 .button {
 	background-color: #00A2E8;
 	color: white;
-	padding: 0.5em 1em;
-	border: 1px solid darkblue;
+	padding: 0.5em
 }
 
 .button:hover {
