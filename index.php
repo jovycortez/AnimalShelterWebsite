@@ -4,11 +4,6 @@
 <link type="text/css" rel="stylesheet" href="layout.css"> 
 <style type = "text/css">
 
-#pets_image{
-			display: block;
-	        margin-left: auto;
-            margin-right: auto;
-		   }
 </style>
 
 
@@ -17,8 +12,6 @@
 <body>
 
 <?php include ('navbar.php'); ?>
-
-<img id="pets_image" src="AnimalCareBanner.jpg" width="1138" height="150">
 
 <div class="wrapper">
 

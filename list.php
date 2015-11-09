@@ -1,5 +1,5 @@
 <?php
-		
+	
 	include('kozycorner.dbconfig.inc');
 	
 	// Connect to MySQL
@@ -12,19 +12,21 @@
 	// Temporarily put these variables here
 	$pet_name = '%';
 	$pet_type = '%';
-	$breed_id = '%';
+	$breed_name = '%';
 	
 	// Build query
-	$query = "SELECT * FROM PETS
+	$query = "SELECT * FROM pets
+			  INNER JOIN breed
+			  ON pets.breed_id=breed.breed_id
 			  WHERE section LIKE '$section' &&
 					pet_name LIKE '$pet_name' &&
 					pet_type LIKE '$pet_type' &&
-					breed_id LIKE '$breed_id'";
+					breed_name LIKE '$breed_name'";
 	
 	// Run query
 	$result = mysqli_query($conn, $query);
 	if (!$result) {
-		print "Error - the query could not be executed" . mysqli_error($conn);
+		print "Error - the query could not be executed: " . mysqli_error($conn);
 		exit;
 	}
 	
@@ -40,43 +42,37 @@
 		print "<strong>$num_rows</strong> results found.<br /><br />";
 	}
 	
-	// Table heading
-	print "<table border=\"1\" width=\"80%\">";
-	print "<tr>";
-		print "<th>Name</th>";
-		print "<th>Type</th>";
-		print "<th>Breed</th>";
-		print "<th>Gender</th>";
-		print "<th>Color</th>";
-		print "<th>Weight</th>";
-		print "<th>Birthdate</th>";
-		print "<th>Description</th>";
-		print "<th>Date Found</th>";
-		print "<th>Zipcode Found</th>";
-	print "</tr>";
+	$image = "images/default.png";
+	$sectionCaps = ucfirst("$section");
 	
 	// For each row in the table..
 	for($row_num = 0; $row_num < $num_rows; $row_num++) {
 		
 		// ..display only certain elements in this row
-		print "<tr>";
-			print "<td><a href=\"profile.php?petid=$row[pet_id]\">$row[pet_name]</a></td>";
-			print "<td>$row[pet_type]</td>";
-			print "<td>$row[breed_id]</td>";
-			print "<td>$row[gender]</td>";
-			print "<td>$row[color]</td>";
-			print "<td>$row[weight] lbs</td>";
-			print "<td>$row[birthdate]</td>";
-			print "<td>$row[pet_description]</td>";
-			print "<td>$row[date_found]</td>";
-			print "<td>$row[zipcode]</td>";
-		print "</tr>";
+		print "<div class=\"post-container\">";
+		
+			$button = "<span class=\"button\">View Record</span>";
+		
+			print "<div class=\"post\">";
+			print "<img src=\"$image\" width=\"200\" height=\"150\" \>";
+			print "</div>";
+			
+			print "<div class=\"post\"><br />";			
+			print "<strong>$row[gender] $row[pet_type]</strong><br />";
+			print "$row[color]<br /><br />";
+			print "$sectionCaps around $row[city], $row[state]<br />";
+			print "on $row[date_found]";
+			print "</div>";
+			
+			print "<div class=\"post\">";	
+			print "<br /><br /><br /><br /><br />";
+			print "<a href=\"profile.php?petid=$row[pet_id]\">$button</a>";
+			print "</div>";
+		
+		print "</div>\r\n\r\n"; // end post container
 		
 		// Move to the next row
 		$row = mysqli_fetch_assoc($result);
 	}
-	
-	// End table
-	print "</table>";
 							
 ?>
