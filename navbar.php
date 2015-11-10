@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<link type="text/css" rel="stylesheet" href="layout.css">
-</head>	
-<body>
 
 	<div id="social_media">
 	<a id="faceb" href="http://www.facebook.com" style="height: 100px; width: 100px;"> <img src="images/faceb.jpg" class="icons"> </img> </a>
@@ -11,31 +5,26 @@
 	</div>
 	
 	<div id="banner">
-		KozyCorner
-	</div>
-	
-	<div>
-    <img id="pets_image" src="images/AnimalCareBanner.jpg" width="1138" height="150">
+		<img id="pets_image" src="images/AnimalCareBanner.jpg" width="100%">
 	</div>
 	
 	<div id="navbar">
+	<div class="wrapper">
 	<ul>
-		<li><a href="index.html">Home</a></li>
-		<li><a href="rescued.php">Rescued</a></li>
-		<li><a href="found.php">Found</a></li>
-		<li><a href="lost.php">Lost</a></li>
-		<li><a href="post.html">Report</a></li>
-		<li><a href="faq.html">FAQ</a></li>		
+		<li><a href="index.php">Home</a></li>
+		<li><a href="lost.php">Lost Pets</a></li>
+		<li><a href="found.php">Found Pets</a></li>
+		<li><a href="rescued.php">Adopt a Pet</a></li>
+		<li><a href="postform.php">Report</a></li>
+		<li><a href="faq.php">FAQ</a></li>
 		<?php
 			if (isSet($_COOKIE["user_id"])) {
-				print "<li><a href=\"logout.php\">Logout</a></li>";
+				print "<li class=\"account\"><a href=\"logout.php\">Logout</a></li>";
 			} else {
-				print "<li><a href=\"login.php\">Login</a></li>";
-				print "<li><a href=\"signup.html\">Register</a></li>";
+				print "<li class=\"account\"><a href=\"login.php\">Login</a></li>";
+				print "<li class=\"account\"><a href=\"Signup_Form.php\">Register</a></li>";
 			}
-		?>		
+		?>	
 	</ul>
 	</div>
-
-</body>
-</html>
+	</div>
