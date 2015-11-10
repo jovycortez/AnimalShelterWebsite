@@ -4,17 +4,18 @@ body {
 	padding: 0;
 }
 
-/* Banner, navbar, and footer */
 #banner {
-	float: left;
 	width: 100%;
+	float: clear;
+	background-color: lightgrey;
+	padding: 40px 15px;
 }
 
-#pets_image {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
+#pets_image{
+			display: block;
+	        margin-left: auto;
+            margin-right: auto;
+		   }
 
 #navbar {
 	background-color: #00A2E8;
@@ -47,25 +48,6 @@ body {
 	background-color: #3C46C8;
 }
 
-.account {
-	background-color: #0071A2;
-}
-
-.account a:hover {
-	background-color: #1D2262 !important;
-}
-
-#footer {
-	background-color: grey;
-	color: white;
-	width: 100%;
-	float: left;
-	text-align: center;
-	display:inline-block;
-	font-weight: bold;
-}
-
-/* Class selectors */
 .wrapper {
 	width: 80%;
 	margin: 0 auto;
@@ -78,16 +60,6 @@ body {
 	}
 }
 
-.post-container {
-	width: 100%;
-	float: left;
-}
-
-.post {
-	float: left;
-	width: 25%;
-}
-
 .box1 {
 	float: left;
 	text-align: center;
@@ -96,49 +68,50 @@ body {
 	height: 250px;
 }
 
+.content h1, h2, h3, h4, h5, h6 {
+	color: grey;
+}
+
+.content p {
+	color: #C3C3C3;
+}
+
 .title {
 	font-weight: bold;
 }
 
-/* Element selectors */
-a:hover {
-	color: #30EFEF;
-}
-
-a {
-	color: #10D1D1;
-}
-
-/* Form selectors and custom buttons */
 input[type="submit"] {
 	background-color: #00A2E8;
 	color: white;
-	padding: 0.5em 1em;
-	border: 1px solid darkblue;
-}
-
-input[type="submit"]:hover {
-	background-color: #3C46C8;
-}
-
-input[type="reset"] {
-	background-color: lightgrey;
-	color: white;
-	padding: 0.5em 1em;
-	border: 1px solid black;
-}
-
-input[type="reset"]:hover {
-	background-color: grey;
+	padding: 0.5em
 }
 
 .button {
 	background-color: #00A2E8;
 	color: white;
-	padding: 0.5em 1em;
-	border: 1px solid darkblue;
+	padding: 0.5em
 }
 
 .button:hover {
 	background-color: #3C46C8;
 }
+#footer {
+	background-color: lightgrey;
+	color: white;
+	width: 100%;
+	float: left;
+	text-align: center;
+	display:inline-block;
+	font-weight: bold;
+}
+
+		
+#social_media{ float: right;
+			 padding: 10px;
+			 }
+		
+
+		
+		
+		
+			 
