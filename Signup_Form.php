@@ -104,10 +104,11 @@ Zip code
 						-->
 						<tr>
 						<td>
-						< input type="submit" value="Submit"/>
+						<input type="submit" value="Submit"/>
 						</tr>
 						</td>
 						
+						</table>
 						
 						   
 			</fieldset>
