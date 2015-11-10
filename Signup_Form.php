@@ -49,7 +49,7 @@ Zip code
 							<label for="password">Password</label>
 						</td>
 						<td>
-							<input type="text" name="password" maxlength="30" size="30" required>
+							<input type="password" name="password" maxlength="30" size="30" required>
 						</td>
 						</tr>
 						<tr>
