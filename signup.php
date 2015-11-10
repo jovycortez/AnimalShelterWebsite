@@ -1,5 +1,5 @@
 <!--Signup php-->
-
+<!DOCTYPE html>
 <html lang = "en">
 	<head>
 		<title> Form </title>
@@ -79,5 +79,5 @@
 		<a href="PostForm.php"> Report </a>
 		</div>
 	</body>
-	</head>
+	
 </html>
