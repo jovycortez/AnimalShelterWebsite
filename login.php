@@ -29,7 +29,7 @@
 				</tr>
 
 				<tr>
-				<td colspan="2"><a href="signup.php">Not Registered yet? Sign up here</a></td>
+				<td colspan="2"><a href="Signup_Form.php">Not Registered yet? Sign up here</a></td>
 				</tr>
 			</table>
 		</form>
