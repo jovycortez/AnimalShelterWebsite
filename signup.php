@@ -41,21 +41,7 @@
 		$phone = strtoupper($phone);
 		
 		
-		//Selects and runs to hold breed table data
-		$query = "SELECT * FROM User";
-		$result = mysqli_query($conn, $query);
-		if (!$result) {
-			print "Error. Cannot be executed" . mysqli_error($conn);
-			exit;
-		}
-		
-		$num_rows = mysqli_num_rows($result);
-		$row = mysqli_fetch_assoc($result);
-		
-		
-		// Move to the next row
-		$row = mysqli_fetch_assoc($result);
-		}
+	
 		
 		//Checks if email/username exists
 		if($exist == FALSE){
