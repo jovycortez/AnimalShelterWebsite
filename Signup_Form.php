@@ -92,17 +92,22 @@ Zip code
 							<input type="text" name="phone" maxlength="10" size="30" required>
 						</td>
 						</tr>
-						
+						<!--
 						<tr>
 						<td>
 							<label for="userType"></label>
 						</td>
 						<td>
-							<input type="text" name="phone" maxlength="10" size="30" required>
+							<input type="text" name="userType" maxlength="10" size="30" required>
 						</td>
 						</tr>
-						<input type="submit" value="Submit"/>
-						</table>
+						-->
+						<tr>
+						<td>
+						< input type="submit" value="Submit"/>
+						</tr>
+						</td>
+						
 						
 						   
 			</fieldset>
