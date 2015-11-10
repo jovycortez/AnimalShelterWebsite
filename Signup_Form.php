@@ -101,9 +101,9 @@ Zip code
 							<input type="text" name="phone" maxlength="10" size="30" required>
 						</td>
 						</tr>
-						
+						<input type="submit" value="Submit"/>
 						</table>
-						<button type="submit" value="Submit">Submit</button>
+						
 						   
 			</fieldset>
 			</form>	
