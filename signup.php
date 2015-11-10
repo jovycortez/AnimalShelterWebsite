@@ -49,28 +49,8 @@
 			//Adds to User table in Database
 			$query = "INSERT INTO mydb.user(username) VALUES('$username')";
 			$result = mysqli_query($conn, $query);
-			if (!$result) {
-				print "Error";
-					mysql_error();
-				exit;
-			}
-			
-			$query = "SELECT * FROM USER";
-			// Run query
-			$result = mysqli_query($conn, $query);
-			if (!$result) {
-				print "Error " . mysqli_error($conn);
-				exit;
-			}
-			//Selects and runs to hold breed table data
-			$num_rows = mysqli_num_rows($result);
-			$row = mysqli_fetch_assoc($result);
 		
-			$exist = FALSE;
-			$row = mysqli_fetch_assoc($result);
-			}
-			
-		}
+		
 		
 		//Inserts a new user
 		$query = "INSERT INTO mydb.user (user_id,username,password, email, first_name,last_name, zip, phone, user_type)
