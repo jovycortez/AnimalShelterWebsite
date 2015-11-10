@@ -25,7 +25,7 @@ Zip code
  
 		<body>
 		<?php
-		<include ("navbar.php");
+		include ("navbar.php");
 		?>
 		<div class="wrapper">
 		<form action = "Signup.php" method ="post">
