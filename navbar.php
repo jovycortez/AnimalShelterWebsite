@@ -17,6 +17,7 @@
 		<li><a href="rescued.php">Adopt a Pet</a></li>
 		<li><a href="postform.php">Report</a></li>
 		<li><a href="faq.php">FAQ</a></li>
+		<li><a href="searchform.php">Search</a></li>
 		<?php
 			if (isSet($_COOKIE["user_id"])) {
 				print "<li class=\"account\"><a href=\"logout.php\">Logout</a></li>";

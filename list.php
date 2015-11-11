@@ -13,32 +13,44 @@
 	$pet_name = '%';
 	$pet_type = '%';
 	$breed_name = '%';
+	$gender = '%';
 	$color = '%';
 	$weight = '%';
-	$gender = '%';
+	$address = '%';
+	$city = '%';
+	$state = '%';
 	$zipcode = '%';
+	$date_found = '%';
 	
-	// Check URL to see if values were set
-	if (isSet($_GET["petname"]))	{ $pet_name = $_GET["petname"]; }
-	if (isSet($_GET["pettype"]))	{ $pet_type = $_GET["pettype"]; }
-	if (isSet($_GET["breedname"]))	{ $breed_name = $_GET["breedname"]; }
-	if (isSet($_GET["color"])) 		{ $color = $_GET["color"]; }
-	if (isSet($_GET["weight"])) 	{ $weight = $_GET["weight"]; }
-	if (isSet($_GET["gender"])) 	{ $gender = $_GET["gender"]; }
-	if (isSet($_GET["zipcode"])) 	{ $zipcode = $_GET["zipcode"]; }
+	// If field is filled and not blank, set variable to it
+	if (isSet($_POST["petname"])	&& $_POST["petname"] != "")		{ $pet_name = $_POST["petname"]; }
+	if (isSet($_POST["pettype"]) 	&& $_POST["pettype"] != "")		{ $pet_type = $_POST["pettype"]; }
+	if (isSet($_POST["breedname"]) 	&& $_POST["breedname"] != "")	{ $breed_name = $_POST["breedname"]; }
+	if (isSet($_POST["gender"])		&& $_POST["gender"] != "" ) 	{ $gender = $_POST["gender"]; }
+	if (isSet($_POST["color"])		&& $_POST["color"] != "" ) 		{ $color = $_POST["color"]; }
+	if (isSet($_POST["weight"])		&& $_POST["weight"] != "" ) 	{ $weight = $_POST["weight"]; }
+	if (isSet($_POST["address"]) 	&& $_POST["address"] != "" ) 	{ $address = $_POST["address"]; }
+	if (isSet($_POST["city"]) 		&& $_POST["city"] != "" ) 		{ $city = $_POST["city"]; }
+	if (isSet($_POST["state"]) 		&& $_POST["state"] != "" ) 		{ $state = $_POST["state"]; }
+	if (isSet($_POST["zipcode"]) 	&& $_POST["zipcode"] != "" ) 	{ $zipcode = $_POST["zipcode"]; }
+	if (isSet($_POST["date_found"]) && $_POST["date_found"] != "" ) { $date_found = $_POST["date_found"]; }
 	
 	// Build query
 	$query = "SELECT * FROM pets
 			  INNER JOIN breed
 			  ON pets.breed_id=breed.breed_id
-			  WHERE section LIKE '$section' &&
-					pet_name LIKE '$pet_name' &&
-					pet_type LIKE '$pet_type' &&
-					breed_name LIKE '$breed_name' &&
-					color LIKE '$color' &&
-					weight LIKE '$weight' &&
-					gender LIKE '$gender' &&
-					zipcode LIKE '$zipcode'";
+			  WHERE section LIKE '%$section%' &&
+					pet_name LIKE '%$pet_name%' &&
+					pet_type LIKE '%$pet_type%' &&
+					breed_name LIKE '%$breed_name%' &&
+					gender LIKE '%$gender%' &&
+					color LIKE '%$color%' &&
+					weight LIKE '%$weight%' &&
+					address LIKE '%$address%'&&
+					city LIKE '%$city%'&&
+					state LIKE '%$state%'&&
+					zipcode LIKE '%$zipcode%'&&
+					date_found LIKE '%$date_found%'";
 	
 	// Run query
 	$result = mysqli_query($conn, $query);
@@ -77,7 +89,7 @@
 			print "<div class=\"post\"><br />";		
 			print "<span class=\"title\">$row[color] $row[pet_type]</span><br />";
 			print "$row[breed_name]<br /><br />";
-			print "$sectionCaps around $row[city], $row[state]<br />";
+			print "$row[section] around $row[city], $row[state]<br />";
 			print "on $row[date_found]";
 			print "</div>";
 			
