@@ -53,8 +53,8 @@
 		
 		
 		//Inserts a new user
-		$query = "INSERT INTO mydb.user (user_id,username,password, email, first_name,last_name, zip, phone, user_type)
-			VALUES('','$user_name', '$password', '$email', '$firstName', '$lastName', '$zip', '$phone', $userType)";
+		$query = "INSERT INTO mydb.user (user_id,username,password, email, first_name,last_name, zip, user_type)
+			VALUES('','$user_name', '$password', '$email', '$firstName', '$lastName', '$zip', '$userType')";
 		$result = mysqli_query($conn, $query);
 		if (!$result) {
 			print "Error - the insert query could not be executed";

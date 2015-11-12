@@ -28,7 +28,7 @@ Zip code
 		include ("navbar.php");
 		?>
 		<div class="wrapper">
-		<form action = "Signup.php" method ="post">
+		<form action="PostForm.php" method ="post">
 			<form>
 			 <a href="login.php"> Already have an account? Login here.</a>
 				<h2> Welcome </h2>
@@ -84,14 +84,7 @@ Zip code
 							<input type="text" name="zip" maxlength="100" size="30" required>
 						</td>
 						</tr>
-						<tr>
-						<td>
-							<label for="phone">Phone Number</label>
-						</td>
-						<td>
-							<input type="text" name="phone" maxlength="10" size="30" required>
-						</td>
-						</tr>
+						
 						<!--
 						<tr>
 						<td>
