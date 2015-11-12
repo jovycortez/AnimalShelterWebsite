@@ -3,7 +3,7 @@
 	include('kozycorner.dbconfig.inc');
 	
 	// Connect to MySQL
-	$conn = mysqli_connect('csc4370.com','', '', 'kozycorner');
+	$conn = mysqli_connect('csc4370.com','f15g06dbadmin', 't7g$SBiv6r#^', 'f15g06db');
 	if (mysqli_connect_errno()) {
 		 print "Connect failed: " . mysqli_connect_error();
 		 exit;
