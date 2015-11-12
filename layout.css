@@ -1,14 +1,13 @@
 body {
 	background-color: white;
 	font-family: Helvetica, sans-serif;
+	/*font-color: #5A5A5A*/
 	margin: 0;
 	padding: 0;
 }
 
 /* Banner, navbar, and footer */
-#banner {
-	float: left;
-	width: 100%;
+#banner {width: 100%;
 }
 
 #pets_image {
@@ -60,15 +59,15 @@ body {
 	background-color: lightgrey;
 	color: white;
 	width: 100%;
-	float: left;
 	text-align: center;
 	display:inline-block;
 	font-weight: bold;
+	height: 100px;
 }
 
 /* Class selectors */
 .wrapper {
-	width: 80%;
+	width: 85%;
 	margin: 0 auto;
 }
 
