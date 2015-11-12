@@ -12,7 +12,7 @@
 		
 		<div class="wrapper">
 			<?php
-				$section = "My Accountccount";
+				$section = "My Account";
 				include ('UserList.php');
 			?>	
 		</div>

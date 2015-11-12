@@ -51,15 +51,7 @@
 	$num_fields = mysqli_num_fields($result);
 	$row = mysqli_fetch_assoc($result);
 	
-	// Display number of results found
-	if ($num_rows == 1) {
-		print "<strong>$num_rows</strong> result found.<br /><br />";
-	} else {
-		print "<strong>$num_rows</strong> results found.<br /><br />";
-	}
 	
-	$image = "images/default.png";
-	$sectionCaps = ucfirst("$section");
 	
 	// For each row in the table..
 	for($row_num = 0; $row_num < $num_rows; $row_num++) {
