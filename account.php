@@ -32,7 +32,7 @@
 				}
 				
 				// See if the user is an admin
-				$query = "SELECT user_id, username, is_admin FROM USERS
+				$query = "SELECT user_id, username, is_admin FROM users
 						  WHERE user_id='$_COOKIE[user_id]'";
 				
 				$result = mysqli_query($conn, $query);

@@ -26,7 +26,7 @@ if(!isset($_COOKIE["user_id"])){
 			}
 			
 			// Build query.
-			$query = "SELECT user_id, username, is_admin FROM USERS
+			$query = "SELECT user_id, username, is_admin FROM users
 					  WHERE user_id='$_COOKIE[user_id]'";
 			
 			// Run query

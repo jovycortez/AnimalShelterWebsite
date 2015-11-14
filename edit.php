@@ -111,7 +111,7 @@
 				exit;
 			}
 			
-			$query = "SELECT * FROM BREED";
+			$query = "SELECT * FROM breed";
 			// Run query
 			$result = mysqli_query($conn, $query);
 			if (!$result) {

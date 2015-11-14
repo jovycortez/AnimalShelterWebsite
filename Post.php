@@ -80,7 +80,7 @@
 		$state = strtoupper($state);
 		
 		//Selects and runs to hold breed table data
-		$query = "SELECT * FROM BREED";
+		$query = "SELECT * FROM breed";
 		$result = mysqli_query($conn, $query);
 		if (!$result) {
 			print "Error - the breed search query could not be executed: " . mysqli_error($conn);
@@ -114,7 +114,7 @@
 				exit;
 			}
 			
-			$query = "SELECT * FROM BREED";
+			$query = "SELECT * FROM breed";
 			// Run query
 			$result = mysqli_query($conn, $query);
 			if (!$result) {

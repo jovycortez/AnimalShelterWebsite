@@ -14,7 +14,7 @@
 	}
 	
 	// Build query.
-	$query = "SELECT user_id, username, password FROM USERS
+	$query = "SELECT user_id, username, password FROM users
 			  WHERE username='$user' && password='$pass';";
 	
 	// Run query
