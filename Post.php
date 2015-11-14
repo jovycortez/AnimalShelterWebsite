@@ -10,7 +10,6 @@
 	<?php
 	include ('navbar.php');
 	include('kozycorner.dbconfig.inc');
-	include ('footer.php');
 	
 	// Connect to MySQL	
 	$conn = mysqli_connect($hostname,$username, $password, $dbname);
@@ -79,7 +78,7 @@
 		$query = "SELECT * FROM BREED";
 		$result = mysqli_query($conn, $query);
 		if (!$result) {
-			print "Error - the breed search query could not be executed" . mysqli_error($conn);
+			print "Error - the breed search query could not be executed: " . mysqli_error($conn);
 			exit;
 		}
 		
@@ -103,11 +102,10 @@
 		if($exist == FALSE){
 			
 			//Adds new breed to breed table
-			$query = "INSERT INTO mydb.breed(breed_name) VALUES('$breed')";
+			$query = "INSERT INTO $dbname.breed(breed_name) VALUES('$breed')";
 			$result = mysqli_query($conn, $query);
 			if (!$result) {
-				print "Error - the breed query could not be executed";
-					mysql_error();
+				print "Error - the breed query could not be executed: " . mysqli_error($conn);
 				exit;
 			}
 			
@@ -115,7 +113,7 @@
 			// Run query
 			$result = mysqli_query($conn, $query);
 			if (!$result) {
-				print "Error - the breed search query could not be executed" . mysqli_error($conn);
+				print "Error - the breed search query could not be executed: " . mysqli_error($conn);
 				exit;
 			}
 			//Selects and runs to hold breed table data
@@ -135,39 +133,21 @@
 		}
 		
 		//Inserts new post
-		$query = "INSERT INTO mydb.pets (branch_id, breed_id, section, pet_name, pet_type, color, weight, gender, address, city, state, zipcode, date_found, is_mixed, pet_description)
-			VALUES('$branch', '$breed', '$section', '$pname', '$ptype', '$color', '$weight', '$gender', '$address', '$city', '$state', '$zip', '$date', '$mixb', '$description')";
+		$query = "INSERT INTO $dbname.pets (user_id, branch_id, breed_id, section, pet_name, pet_type, color, weight, gender, address, city, state, zipcode, date_found, is_mixed, pet_description)
+			VALUES('$_COOKIE[user_id]', '$branch', '$breed', '$section', '$pname', '$ptype', '$color', '$weight', '$gender', '$address', '$city', '$state', '$zip', '$date', '$mixb', '$description')";
 		$result = mysqli_query($conn, $query);
 		if (!$result) {
-			print "Error - the insert query could not be executed";
-				mysql_error();
-			exit;	
-		}
-		
-		//Gets new pets post id
-		$query = "SELECT * FROM pets ORDER BY pet_id DESC LIMIT 1";
-		$result = mysqli_query($conn, $query);
-		if (!$result) {
-			print "Error - the latest query could not be executed";
-				mysql_error();
-			exit;	
-		}
-		$row = mysqli_fetch_assoc($result);
-		$petid = $row['pet_id'];
-		
-		//Links post_id to user
-		$userid = $_COOKIE["user_id"];
-		$query = "INSERT INTO mydb.users_pets (pet_id, user_id) VALUES ('$petid', '$userid')";
-		$result = mysqli_query($conn, $query);
-		if (!$result) {
-			print "Error - the latest query could not be executed";
-				mysql_error();
+			print "Error - the insert query could not be executed: " . mysqli_error($conn);
 			exit;	
 		}
 		?>
 		<div class="wrapper">
 		<h1>You post has successfully been submitted!</h1>
 		</div>
+		
+		<?php
+			include ('footer.php');
+		?>
 	</body>
 	</head>
 </html>

@@ -5,8 +5,8 @@
 </head>
 <body>
 	<div id="social_media">
-	<a id="faceb" href="http://www.facebook.com" style="height: 100px; width: 100px;"> <img src="images/faceb.jpg" class="icons"> </img> </a>
-	<a id="twitter" href="https://twitter.com/"> <img src="images/twitter.jpg" class="icons"> </img> </a>
+	<a id="faceb" href="http://www.facebook.com" style="height: 100px; width: 100px;"><img src="images/faceb.jpg" class="icons"></img></a>
+	<a id="twitter" href="https://twitter.com/"><img src="images/twitter.jpg" class="icons"></img></a>
 	</div>
 	
 <script language="JavaScript"> 

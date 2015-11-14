@@ -38,7 +38,7 @@
 	// Build query
 	$query = "SELECT * FROM pets
 			  INNER JOIN breed
-			  ON pets.breed_id=breed.breed_id
+			  ON pets.breed_id = breed.breed_id
 			  WHERE section LIKE '%$section%' &&
 					pet_name LIKE '%$pet_name%' &&
 					pet_type LIKE '%$pet_type%' &&

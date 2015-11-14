@@ -12,6 +12,19 @@
 	?>
 	
 	<div class="wrapper">
+	
+		<?php
+
+			// Display message if user already tried logging in
+			if (isSet($_GET["login"]) && $_GET["login"] == "retry") {
+				print "<p class=\"warning\"><strong>The username or password was invalid, please try again.</strong></p>";
+			} else if (isSet($_GET["login"]) && $_GET["login"] == "post") {
+				print "<p class=\"warning\"><strong>You must login to make a post.</strong></p>";
+			} else if (isSet($_GET["login"]) && $_GET["login"] == "registered") {
+				print "<p class=\"warning\"><strong>Thanks for signing up! Please sign in.</strong></p>";
+			}
+		?>
+
 		<form action="login_script.php" method="post">
 			<table border="0">
 				<tr>
@@ -33,16 +46,6 @@
 				</tr>
 			</table>
 		</form>
-		
-		<?php
-
-			// Display message if user already tried logging in
-			if (isSet($_GET["login"]) && $_GET["login"] == "retry") {
-				print "<p><strong>The username or password was invalid, please try again.</strong></p>";
-			} else if (isSet($_GET["login"]) && $_GET["login"] == "post") {
-				print "<p><strong>You must login to make a post.</strong></p>";
-			}
-		?>
 	</div>
 	
 	<?php

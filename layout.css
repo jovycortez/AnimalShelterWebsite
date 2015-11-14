@@ -7,20 +7,15 @@ body {
 }
 
 /* Banner, navbar, and footer */
-#banner {width: 100%;
+#banner {
+	width: 100%;
 }
 
-/*#pets_image {
+#slideImg1 {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}*/
-
-#slideImg1{
-			display: block;
-	        margin-left: auto;
-            margin-right: auto;
-		   }
+}
 
 #navbar {
 	background-color: #00A2E8;
@@ -39,6 +34,12 @@ body {
 
 #navbar li {
 	float: left;
+}
+
+@media screen and (max-width: 480px) {
+	#navbar li {
+		float: none;
+	}
 }
 
 #navbar li a {
@@ -71,6 +72,11 @@ body {
 	height: 100px;
 }
 
+#social_media {
+	float: right;
+	padding: 0px;
+}
+
 /* Class selectors */
 .wrapper {
 	width: 90%;
@@ -97,6 +103,10 @@ body {
 
 .title {
 	font-weight: bold;
+}
+
+.warning {
+	color: red;
 }
 
 /* Element selectors */
@@ -141,7 +151,4 @@ input[type="reset"]:hover {
 
 .button:hover {
 	background-color: #3C46C8;
-}	
-#social_media{ float: right;
-			 padding: 0px;
-			 }
+}

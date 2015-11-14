@@ -28,11 +28,22 @@ Zip code
 		include ("navbar.php");
 		?>
 		<div class="wrapper">
-		<form action="index.php" method ="post">
+		
+		<?php
+
+			// Display message if uusername or email is already taken
+			if (isSet($_GET["register"]) && $_GET["register"] == "usernametaken") {
+				print "<p class=\"warning\"><strong>That username has already been used, please choose another one.</strong></p>";
+			} else if (isSet($_GET["register"]) && $_GET["register"] == "emailtaken") {
+				print "<p class=\"warning\"><strong>That email has already been used, please use another one.</strong></p>";
+			}
+		?>
+		
+		
+		<form action="Register.php" method ="post">
 			<form>
 			 <a href="login.php"> Already have an account? Login here.</a>
 				<h2> Welcome </h2>
-					<div>
 					<table>
 						<table width="500px"> 
 						 <tr>
@@ -76,7 +87,7 @@ Zip code
 							<input type="text" name="lastName" maxlength="100" size="30" required>
 						</td>
 						</tr>
-												<tr>
+						<tr>
 						<td>
 							<label for="zip">Zip Code</label>
 						</td>
@@ -84,32 +95,21 @@ Zip code
 							<input type="text" name="zip" maxlength="100" size="30" required>
 						</td>
 						</tr>
-						
-						<!--
-						<tr>
-						<td>
-							<label for="userType"></label>
-						</td>
-						<td>
-							<input type="text" name="userType" maxlength="10" size="30" required>
-						</td>
-						</tr>
-						-->
 						<tr>
 						<td>
 						<input type="submit" value="Submit"/>
 						</tr>
 						</td>
 						
-						</table>
-						
-						   
+					</table> 
 			</fieldset>
-			</form>	
+			</form>
 			
-			</div>
-
-</div>
+		</div>
+		
+		<?php
+			include ('footer.php');
+		?>
 
 	</body>	
 </html>

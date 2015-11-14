@@ -1,3 +1,10 @@
+<?php
+	if(!isset($_COOKIE["user_id"])){
+		header('Location: login.php');
+		exit;
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +32,7 @@
 				}
 
 				// Build query
-				$query = "SELECT * FROM users_pets
-						  INNER JOIN pets
-						  ON pets.pet_id = users_pets.pet_id
+				$query = "SELECT * FROM pets
 						  WHERE user_id = '$_COOKIE[user_id]'";
 				
 				// Run query
@@ -41,6 +46,13 @@
 				$num_rows = mysqli_num_rows($result);
 				$num_fields = mysqli_num_fields($result);
 				$row = mysqli_fetch_assoc($result);
+				
+				// Display number of results found
+				if ($num_rows == 1) {
+					print "<strong>$num_rows</strong> post found.<br /><br />";
+				} else {
+					print "<strong>$num_rows</strong> posts found.<br /><br />";
+				}
 				
 				$image = "images/default.png";
 				
@@ -57,7 +69,7 @@
 						print "<img src=\"$image\" width=\"200\" height=\"150\" \>";
 						print "</div>";
 						
-						print "<div class=\"post\"><br />";		
+						print "<div class=\"post\"><br />";
 						print "<span class=\"title\">$row[color] $row[pet_type]</span><br />";
 						print "$row[section] around $row[city], $row[state]<br />";
 						print "on $row[date_found]";

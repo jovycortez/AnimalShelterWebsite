@@ -10,7 +10,6 @@
 	<?php
 	include ('navbar.php');
 	include('kozycorner.dbconfig.inc');
-	include ('footer.php');
 	
 	// Connect to MySQL	
 	$conn = mysqli_connect($hostname,$username, $password, $dbname);
@@ -80,7 +79,7 @@
 		$query = "SELECT * FROM BREED";
 		$result = mysqli_query($conn, $query);
 		if (!$result) {
-			print "Error - the breed search query could not be executed" . mysqli_error($conn);
+			print "Error - the breed search query could not be executed: " . mysqli_error($conn);
 			exit;
 		}
 		
@@ -104,7 +103,7 @@
 		if($exist == FALSE){
 			
 			//Adds new breed to breed table
-			$query = "INSERT INTO mydb.breed(breed_name) VALUES('$breed')";
+			$query = "INSERT INTO $dbname.breed(breed_name) VALUES('$breed')";
 			$result = mysqli_query($conn, $query);
 			if (!$result) {
 				print "Error - the breed query could not be executed";
@@ -116,7 +115,7 @@
 			// Run query
 			$result = mysqli_query($conn, $query);
 			if (!$result) {
-				print "Error - the breed search query could not be executed" . mysqli_error($conn);
+				print "Error - the breed search query could not be executed: " . mysqli_error($conn);
 				exit;
 			}
 			//Selects and runs to hold breed table data
@@ -139,15 +138,17 @@
 		$query = "UPDATE pets SET pet_name='$pname', pet_type='$ptype', breed_id='$breed', color='$color', weight='$weight', gender = '$gender', address='$address', city='$city', state ='$state', zipcode = '$zip', date_found = '$date', is_mixed = '$mixb', pet_description = '$description', branch_id = '$branch', section = '$section' WHERE pet_id = '$petid'";
 		$result = mysqli_query($conn, $query);
 		if (!$result) {
-			print "Error - the update query could not be executed";
-				mysql_error();
-			exit;	
+			print "Error - the update query could not be executed: " . mysqli_error($conn);
 		}
 		
 		?>
 		<div class="wrapper">
 		<h1>You have successfully updated your post!</h1>
 		</div>
+		
+		<?php
+			include ('footer.php');
+		?>
 	</body>
 	</head>
 </html>
