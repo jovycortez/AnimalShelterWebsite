@@ -135,7 +135,7 @@
 			
 		}
 			
-		//Inserts new post
+		//Update post
 		$query = "UPDATE pets SET pet_name='$pname', pet_type='$ptype', breed_id='$breed', color='$color', weight='$weight', gender = '$gender', address='$address', city='$city', state ='$state', zipcode = '$zip', date_found = '$date', is_mixed = '$mixb', pet_description = '$description', branch_id = '$branch', section = '$section' WHERE pet_id = '$petid'";
 		$result = mysqli_query($conn, $query);
 		if (!$result) {
@@ -144,26 +144,6 @@
 			exit;	
 		}
 		
-		//Gets new pets post id
-		$query = "SELECT * FROM pets ORDER BY pet_id DESC LIMIT 1";
-		$result = mysqli_query($conn, $query);
-		if (!$result) {
-			print "Error - the latest query could not be executed";
-				mysql_error();
-			exit;	
-		}
-		$row = mysqli_fetch_assoc($result);
-		$petid = $row['pet_id'];
-		
-		//Links post_id to user
-		$userid = $_COOKIE["user_id"];
-		$query = "INSERT INTO mydb.users_pets (pet_id, user_id) VALUES ('$petid', '$userid')";
-		$result = mysqli_query($conn, $query);
-		if (!$result) {
-			print "Error - the latest query could not be executed";
-				mysql_error();
-			exit;	
-		}
 		?>
 		<div class="wrapper">
 		<h1>You have successfully updated your post!</h1>
