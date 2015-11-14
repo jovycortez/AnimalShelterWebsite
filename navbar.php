@@ -32,11 +32,10 @@ function swapImage()
 }
 window.onload=swapImage;
 </script> 
-<img id="slideImg1" src="slideImg1.jpg" width="1500" height="250" name="slide">
 
-<!-- <div id="banner">
-		<img id="pets_image" src="images/AnimalCareBanner.jpg" width="100%">
-	</div> -->
+	<div id="banner">
+		<img id="slideImg1" src="slideImg1.jpg" width="100%" name="slide">
+	</div>
 	
 	<div id="navbar">
 	<div class="wrapper">
