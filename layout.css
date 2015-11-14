@@ -10,11 +10,17 @@ body {
 #banner {width: 100%;
 }
 
-#pets_image {
+/*#pets_image {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}
+}*/
+
+#slideImg1{
+			display: block;
+	        margin-left: auto;
+            margin-right: auto;
+		   }
 
 #navbar {
 	background-color: #00A2E8;
@@ -67,7 +73,7 @@ body {
 
 /* Class selectors */
 .wrapper {
-	width: 85%;
+	width: 90%;
 	margin: 0 auto;
 }
 
@@ -137,5 +143,5 @@ input[type="reset"]:hover {
 	background-color: #3C46C8;
 }	
 #social_media{ float: right;
-			 padding: 10px;
+			 padding: 0px;
 			 }

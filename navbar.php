@@ -1,12 +1,42 @@
+<html>
 
+<head>
+
+</head>
+<body>
 	<div id="social_media">
 	<a id="faceb" href="http://www.facebook.com" style="height: 100px; width: 100px;"> <img src="images/faceb.jpg" class="icons"> </img> </a>
 	<a id="twitter" href="https://twitter.com/"> <img src="images/twitter.jpg" class="icons"> </img> </a>
 	</div>
 	
-	<div id="banner">
+<script language="JavaScript"> 
+var i = 0;
+var path = new Array();
+ 
+path[0] = "images/slideImg1.jpg";
+path[1] = "images/slideImg2.jpg";
+path[2] = "images/slideImg3.jpg";
+
+function swapImage()
+{
+   document.slide.src = path[i];
+   if(i < path.length - 1)
+   {
+      i++;
+   }
+   else
+   {
+      i = 0;
+   }
+   setTimeout("swapImage()", 3000);
+}
+window.onload=swapImage;
+</script> 
+<img id="slideImg1" src="slideImg1.jpg" width="1500" height="250" name="slide">
+
+<!-- <div id="banner">
 		<img id="pets_image" src="images/AnimalCareBanner.jpg" width="100%">
-	</div>
+	</div> -->
 	
 	<div id="navbar">
 	<div class="wrapper">
@@ -20,7 +50,7 @@
 		<li><a href="searchform.php">Search</a></li>
 		<?php
 			if (isSet($_COOKIE["user_id"])) {
-				print "<li class=\"account\"><a href=\"account.php\">My Account</a></li>";
+				print "<li class=\"account\"><a href=\"myaccount.php\">My Account</a></li>";
 				print "<li class=\"account\"><a href=\"logout.php\">Logout</a></li>";
 			} else {
 				print "<li class=\"account\"><a href=\"login.php\">Login</a></li>";
@@ -30,3 +60,6 @@
 	</ul>
 	</div>
 	</div>
+	
+</body>
+</html>	

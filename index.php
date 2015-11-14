@@ -28,10 +28,10 @@
 	
     float: right;
     height: 450px;
-    padding: 5px;
+    padding: 0px;
     width: 310px;
 	line-height: 150%;
-	margin-right: 80px;
+	margin-right: 0px;
 	display: inline-block;
 }
 
@@ -58,7 +58,7 @@ Helping reunite pets with people since 2015 as a free community service.</h2>
 </div>
 <div id="container">
 <div class="container1 ">
-<img src="images/cat1.jpg" class="cat1" alt="Cat on a window"  >
+<img src="images/dog1.jpg" class="dog1" alt="dog lying down on grass"  >
  <p> Lost a Pet? </p>
 <ul style="text-align: left;">
 	<li> under construction</li>
@@ -69,7 +69,7 @@ Helping reunite pets with people since 2015 as a free community service.</h2>
 </div>
 
 <div class="container2 ">
-<img src="images/cat2.jpg" class="cat2" alt="Staring Cat" >
+<img src="images/cat1.jpg" class="cat1" alt="cat sitting next to window" >
 <p> Found a Pet? </p>
 <ul style="text-align: left;">
 	<li> here</li>
@@ -79,7 +79,7 @@ Helping reunite pets with people since 2015 as a free community service.</h2>
 </div>
 
 <div class="container3 ">
-<img src="images/dogOnGrass.jpg" class="dogOnGrass" alt="dog laying down on the grass"  >
+<img src="images/dog2.jpg" class="puppiesOnGrass" alt="puppies sitting on the grass"  >
 <p> Whom to Contact </p>
 <ul style="text-align: left;">
 	<li> here</li>
