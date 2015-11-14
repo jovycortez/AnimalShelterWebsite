@@ -50,7 +50,7 @@ window.onload=swapImage;
 		<li><a href="searchform.php">Search</a></li>
 		<?php
 			if (isSet($_COOKIE["user_id"])) {
-				print "<li class=\"account\"><a href=\"myaccount.php\">My Account</a></li>";
+				print "<li class=\"account\"><a href=\"account.php\">My Account</a></li>";
 				print "<li class=\"account\"><a href=\"logout.php\">Logout</a></li>";
 			} else {
 				print "<li class=\"account\"><a href=\"login.php\">Login</a></li>";
