@@ -50,6 +50,7 @@
 					print "<div class=\"post-container\">";
 					
 						$button = "<span class=\"button\">View Record</span>";
+						$button2 = "<span class=\"button\">Edit</span>";
 					
 						print "<div class=\"post\">";
 						print "<img src=\"$image\" width=\"200\" height=\"150\" \>";
@@ -64,6 +65,7 @@
 						print "<div class=\"post\">";	
 						print "<br /><br /><br /><br /><br />";
 						print "<a href=\"profile.php?petid=$row[pet_id]\">$button</a>";
+						print "<a href=\"editform.php?petid=$row[pet_id]\">$button2</a>";
 						print "</div>";
 					
 					print "</div>\r\n\r\n"; // end post container
