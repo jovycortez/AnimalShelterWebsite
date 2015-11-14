@@ -78,6 +78,9 @@
 		<link rel="stylesheet" type="text/css" href="layout.css" />
 	</head>
 	<body>
+	
+		<?php include ('navbar.php'); ?>
+	
 		<div class="wrapper">
 		<h2> Thanks for signing up!</h2>
 		<a href="home.php"> home </a><br/>

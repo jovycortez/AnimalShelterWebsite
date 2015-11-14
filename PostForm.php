@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<!-- post.html is a html full of text -->
 <?php
 if(!isset($_COOKIE["user_id"])){
 	header('Location: login.php?login=post');
 }
 ?>
 
+<!DOCTYPE html>
+<!-- post.html is a html full of text -->
 <html lang = "en">
 	<head>
 		<title>Post Form </title>

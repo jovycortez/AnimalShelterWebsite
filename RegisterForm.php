@@ -40,7 +40,7 @@ Zip code
 		?>
 		
 		
-		<form action="Register.php" method ="post">
+		<form action="register.php" method ="post">
 			<form>
 			 <a href="login.php"> Already have an account? Login here.</a>
 				<h2> Welcome </h2>
