@@ -23,17 +23,35 @@
 		
 			<?php
 				include('kozycorner.dbconfig.inc');
-	
+				
 				// Connect to MySQL
 				$conn = mysqli_connect($hostname,$username, $password, $dbname);
 				if (mysqli_connect_errno()) {
 					 print "Connect failed: " . mysqli_connect_error();
 					 exit;
 				}
-
-				// Build query
-				$query = "SELECT * FROM pets
-						  WHERE user_id = '$_COOKIE[user_id]'";
+				
+				// See if the user is an admin
+				$query = "SELECT user_id, username, is_admin FROM USERS
+						  WHERE user_id='$_COOKIE[user_id]'";
+				
+				$result = mysqli_query($conn, $query);
+				if (!$result) {
+					print "Error - the query could not be executed: " . mysqli_error($conn);
+					exit;
+				}
+				
+				$row = mysqli_fetch_assoc($result);
+				$isAdmin = $row["is_admin"];
+				
+				// Admin can see all posts
+				if ($isAdmin) {
+					$query = "SELECT * FROM pets";
+					
+				} else {
+					$query = "SELECT * FROM pets
+							  WHERE user_id = '$_COOKIE[user_id]'";
+				}
 				
 				// Run query
 				$result = mysqli_query($conn, $query);
