@@ -8,6 +8,6 @@
 $hostname='localhost';
 $username='root';
 $password='';
-$dbname='mydb';
+$dbname='f15g06db';
 
 ?>
