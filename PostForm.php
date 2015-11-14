@@ -16,6 +16,30 @@ if(!isset($_COOKIE["user_id"])){
 	<body>
 		<?php
 			include ('navbar.php');
+			include('kozycorner.dbconfig.inc');
+			
+			// Connect to MySQL
+			$conn = mysqli_connect($hostname, $username, $password, $dbname);
+			if (mysqli_connect_errno()) {
+				 print "Connect failed: " . mysqli_connect_error();
+				 exit;
+			}
+			
+			// Build query.
+			$query = "SELECT user_id, username, is_admin FROM USERS
+					  WHERE user_id='$_COOKIE[user_id]'";
+			
+			// Run query
+			$result = mysqli_query($conn, $query);
+			if (!$result) {
+				print "Error - the query could not be executed: " . mysqli_error($conn);
+				exit;
+			}
+			
+			// See if user is admin
+			$row = mysqli_fetch_assoc($result);
+			$isAdmin = $row["is_admin"];
+			
 		?>
 
 		<div class="wrapper">
@@ -23,9 +47,13 @@ if(!isset($_COOKIE["user_id"])){
 		
 		<table>
 		<tr>
-			<td> <input type = "radio"  name = "section" value = "Found" />Found</td>
 			<td> <input type = "radio"  name = "section" value = "Lost" />Lost</td>
-			<td> <input type = "radio"  name = "section" value = "Rescued" />Rescued</td>
+			<td> <input type = "radio"  name = "section" value = "Found" />Found</td>
+			<?php
+				if ($isAdmin) {
+					print "<td> <input type = \"radio\"  name = \"section\" value = \"Rescued\" />Rescued</td>";
+				}
+			?>
 		</tr>
 		</table>
 		
@@ -103,17 +131,22 @@ if(!isset($_COOKIE["user_id"])){
 			<td> <textarea  name = "description" style="resize:none" rows = "4" cols = "50" required placeholder="Briefly describe the pet" /></textarea></td>
         </tr>
 		<tr>
-			<td> Branch: </td>
-			<td> <select name = "branch">
-					<option value="na">Choose a Branch</option>
-					<option value="la">Los Angeles</option>
-					<option value="atl">Atlanta</option>
-					<option value="nyc">New York City</option>
-					<option value="dal">Dallas</option>
-					<option value="sea">Seattle</option>
-				</select>
-			</td>
-        </tr>
+		
+		<?php
+			if ($isAdmin) {
+				print "<td> Branch: </td>
+				<td> <select name = \"branch\">
+						<option value=\"na\">Choose a Branch</option>
+						<option value=\"la\">Los Angeles</option>
+						<option value=\"atl\">Atlanta</option>
+						<option value=\"nyc\">New York City</option>
+						<option value=\"dal\">Dallas</option>
+						<option value=\"sea\">Seattle</option>
+					</select>
+				</td>
+				</tr>";
+			}
+		?>
 		
         </table>
 		<input type = "submit" value = "Submit" />

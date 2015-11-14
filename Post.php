@@ -33,7 +33,12 @@
 		$date = $_POST['date'];
 		$mixb = $_POST['mixbreed'];
 		$description = $_POST['description'];
-		$branch = $_POST['branch'];
+		
+		if (isSet($_POST['branch'])) {
+			$branch = $_POST['branch'];
+		} else {
+			$branch = "na";
+		}
 		
 		if($pname == null){
 			$pname = '';
