@@ -46,11 +46,13 @@
 				
 				// Admin can see all posts
 				if ($isAdmin) {
-					$query = "SELECT * FROM pets";
+					$query = "SELECT * FROM pets
+							  ORDER BY date_found DESC";
 					
 				} else {
 					$query = "SELECT * FROM pets
-							  WHERE user_id = '$_COOKIE[user_id]'";
+							  WHERE user_id = '$_COOKIE[user_id]'
+							  ORDER BY date_found DESC";
 				}
 				
 				// Run query
@@ -105,6 +107,72 @@
 					// Move to the next row
 					$row = mysqli_fetch_assoc($result);
 				}
+				
+				// Display heading
+				print "<h2>Recent posts in my area</h2>";
+				
+				// Get the users zipcode
+				$query = "SELECT user_id, zip FROM users
+						  WHERE user_id = '$_COOKIE[user_id]'";
+				  
+				$result = mysqli_query($conn, $query);
+				if (!$result) {
+					print "Error - the query could not be executed: " . mysqli_error($conn);
+					exit;
+				}
+				
+				$row = mysqli_fetch_assoc($result);
+				$zipcode = $row["zip"];
+				
+				// Find posts with this same zip code as user
+				$query = "SELECT * FROM pets
+						  WHERE zipcode='$zipcode' && user_id NOT LIKE $_COOKIE[user_id]
+						  ORDER BY section DESC, date_found DESC";
+						  
+				$result = mysqli_query($conn, $query);
+				if (!$result) {
+					print "Error - the query could not be executed: " . mysqli_error($conn);
+					exit;
+				}
+				
+				$num_rows = mysqli_num_rows($result);
+				$num_rows = mysqli_num_rows($result);
+				$row = mysqli_fetch_assoc($result);
+				
+				if ($num_rows == 1) {
+					print "<strong>$num_rows</strong> post found.<br /><br />";
+				} else {
+					print "<strong>$num_rows</strong> posts found.<br /><br />";
+				}
+				
+				for($row_num = 0; $row_num < $num_rows; $row_num++) {
+					
+					print "<div class=\"post-container\">";
+					
+						$button1 = "<span class=\"button\">View Record</span>";
+					
+						print "<div class=\"post\">";
+						print "<img src=\"$image\" width=\"200\" height=\"150\" \>";
+						print "</div>";
+						
+						print "<div class=\"post\"><br />";
+						print "<span class=\"title\">$row[color] $row[pet_type]</span><br />";
+						print "$row[section] around $row[city], $row[state]<br />";
+						print "on $row[date_found]";
+						print "</div>";
+						
+						print "<div class=\"post\">";	
+						print "<br /><br /><br /><br /><br />";
+						print "<a href=\"profile.php?petid=$row[pet_id]\">$button1</a>";
+						print "</div>";
+					
+					print "</div>\r\n\r\n"; // end post container
+					
+					// Move to the next row
+					$row = mysqli_fetch_assoc($result);
+				}
+				
+				
 			?>
 			
 		</div>

@@ -50,7 +50,8 @@
 					city LIKE '%$city%'&&
 					state LIKE '%$state%'&&
 					zipcode LIKE '%$zipcode%'&&
-					date_found LIKE '%$date_found%'";
+					date_found LIKE '%$date_found%'
+			  ORDER BY date_found DESC";
 	
 	// Run query
 	$result = mysqli_query($conn, $query);
