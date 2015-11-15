@@ -7,15 +7,14 @@ body {
 }
 
 /* Banner, navbar, and footer */
-#banner {
-	width: 100%;
+#banner {width: 100%;
 }
 
-#slideImg1 {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
+#slideImg1{
+			display: block;
+	        margin-left: auto;
+            margin-right: auto;
+		   }
 
 #navbar {
 	background-color: #00A2E8;
@@ -34,12 +33,6 @@ body {
 
 #navbar li {
 	float: left;
-}
-
-@media screen and (max-width: 640px) {
-	#navbar li {
-		float: none;
-	}
 }
 
 #navbar li a {
@@ -70,11 +63,8 @@ body {
 	display:inline-block;
 	font-weight: bold;
 	height: 100px;
-}
-
-#social_media {
-	float: right;
-	padding: 0px;
+	line-height: 70px;
+	vertical-align: middle;
 }
 
 /* Class selectors */
@@ -83,7 +73,7 @@ body {
 	margin: 0 auto;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 480px) {
 	.wrapper {
 		width: 95%;
 		margin: 0 auto;
@@ -105,19 +95,10 @@ body {
 	font-weight: bold;
 }
 
-.warning {
-	color: red;
-}
-
 /* Element selectors */
 a:hover {
 	color: #30EFEF;
 }
-
-a {
-	color: #10D1D1;
-}
-
 
 /* Form selectors and custom buttons */
 input[type="submit"] {
@@ -151,4 +132,16 @@ input[type="reset"]:hover {
 
 .button:hover {
 	background-color: #3C46C8;
+}	
+#social_media{ float: right;
+			 padding: 15px;
 }
+#logo{float: left;
+			 padding: 0px;
+}
+
+#navbarTop{width: 30%;
+		   margin-top 10px;
+		   margin: 0px auto;
+		   }
+			

@@ -4,10 +4,15 @@
 
 </head>
 <body>
-	<div id="social_media">
-	<a id="faceb" href="http://www.facebook.com" style="height: 100px; width: 100px;"><img src="images/faceb.jpg" class="icons"></img></a>
-	<a id="twitter" href="https://twitter.com/"><img src="images/twitter.jpg" class="icons"></img></a>
+<div id="navbarTop" >
+	<div id="logo">
+	<a id="kozyCorner" href="index.php"> <img src="images/kozycornerlogo.png" class="icons"> </img> </a>
 	</div>
+	<div id="social_media">
+	<a id="faceb" href="http://www.facebook.com"><img src="images/facebook.jpg" class="icons" style="padding-right: 15px;"></img></a>
+	<a id="twitter" href="https://twitter.com/"><img src="images/twitter.png" class="icons"></img></a>
+	</div>
+</div>
 	
 <script language="JavaScript"> 
 var i = 0;
@@ -37,7 +42,7 @@ window.onload=swapImage;
 		<img id="slideImg1" src="slideImg1.jpg" width="100%" name="slide">
 	</div>
 	
-	<div id="navbar">
+<div id="navbar">
 	<div class="wrapper">
 	<ul>
 		<li><a href="index.php">Home</a></li>
@@ -53,7 +58,7 @@ window.onload=swapImage;
 				print "<li class=\"account\"><a href=\"logout.php\">Logout</a></li>";
 			} else {
 				print "<li class=\"account\"><a href=\"login.php\">Login</a></li>";
-				print "<li class=\"account\"><a href=\"registerform.php\">Register</a></li>";
+				print "<li class=\"account\"><a href=\"RegisterForm.php\">Register</a></li>";
 			}
 		?>	
 	</ul>
