@@ -58,7 +58,7 @@ window.onload=swapImage;
 				print "<li class=\"account\"><a href=\"logout.php\">Logout</a></li>";
 			} else {
 				print "<li class=\"account\"><a href=\"login.php\">Login</a></li>";
-				print "<li class=\"account\"><a href=\"RegisterForm.php\">Register</a></li>";
+				print "<li class=\"account\"><a href=\"registerform.php\">Register</a></li>";
 			}
 		?>	
 	</ul>
