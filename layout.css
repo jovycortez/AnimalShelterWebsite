@@ -43,6 +43,12 @@ body {
 	color: white;
 }
 
+@media screen and (max-width: 640px) {
+	#navbar li {
+		float: none;
+	}
+}
+
 #navbar a:hover {
 	background-color: #3C46C8;
 }
@@ -73,7 +79,7 @@ body {
 	margin: 0 auto;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 640px) {
 	.wrapper {
 		width: 95%;
 		margin: 0 auto;
@@ -93,6 +99,10 @@ body {
 
 .title {
 	font-weight: bold;
+}
+
+.warning {
+	color: red;
 }
 
 /* Element selectors */
