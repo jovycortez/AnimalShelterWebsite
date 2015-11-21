@@ -81,7 +81,7 @@ Helping reunite pets with people since 2015 as a free community service.</p>
 <div id="container">
 <div class="container1 ">
 <img src="images/dog1.jpg" class="dog1" alt="dog lying down on grass">
- <p> Did you Loose a Pet? </p>
+ <p> Did you lose a Pet? </p>
 <ul>
 	<li> <a class="found" href="PostForm.php">Post a Report </a> </li>
 	<li> <a class="found" href="found.php">Search Found Reports</a> </li>

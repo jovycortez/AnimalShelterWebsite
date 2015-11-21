@@ -122,7 +122,7 @@ if(!isset($_COOKIE["user_id"])){
         </tr>
 		
 		<tr>
-			<td> Date Found: </td>  
+			<td> Date Lost/Found: </td>  
 			<td> <input type = "text"  name = "date" size = "10" maxlength="10" required pattern="^(\d{4})-(\d{1,2})-(\d{1,2})" placeholder="YYYY-MM-DD" /></td>
         </tr>
 

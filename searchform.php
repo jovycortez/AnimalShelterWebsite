@@ -19,8 +19,8 @@
 		
 		<table>
 		<tr>
-			<td> <input type = "radio"  name = "section" value = "Found" />Found</td>
 			<td> <input type = "radio"  name = "section" value = "Lost" />Lost</td>
+			<td> <input type = "radio"  name = "section" value = "Found" />Found</td>
 			<td> <input type = "radio"  name = "section" value = "Rescued" />Rescued</td>
 		</tr>
 		</table>

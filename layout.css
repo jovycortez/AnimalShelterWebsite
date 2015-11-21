@@ -60,12 +60,6 @@ body {
 	color: white;
 }
 
-@media screen and (max-device-width: 640px) {
-	#navbar li {
-		float: none;
-	}
-}
-
 #navbar a:hover {
 	background-color: #3C46C8;
 }
@@ -94,13 +88,6 @@ body {
 .wrapper {
 	width: 90%;
 	margin: 0 auto;
-}
-
-@media screen and (max-device-width: 640px) {
-	.wrapper {
-		width: 95%;
-		margin: 0 auto;
-	}
 }
 
 .post-container {
@@ -159,4 +146,16 @@ input[type="reset"]:hover {
 
 .button:hover {
 	background-color: #3C46C8;
-}		
+}
+
+/* Mobile devices */
+@media screen and (max-width: 640px), (max-device-width: 640px)  {
+	#navbar li {
+		float: none;
+	}
+	
+	.wrapper {
+		width: 95%;
+		margin: 0 auto;
+	}
+}
