@@ -9,7 +9,7 @@
 	<a id="kozyCorner" href="index.php"> <img src="images/kozycornerlogo.png" class="icons"> </img> </a>
 	</div>
 	<div id="social_media">
-	<a id="faceb" href="http://www.facebook.com"><img src="images/facebook.jpg" class="icons" style="padding-right: 15px;"></img></a>
+	<a id="faceb" href="http://www.facebook.com"><img src="images/facebook.png" class="icons" style="padding-right: 15px;"></img></a>
 	<a id="twitter" href="https://twitter.com/"><img src="images/twitter.png" class="icons"></img></a>
 	</div>
 </div>

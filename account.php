@@ -81,10 +81,6 @@
 					
 					print "<div class=\"post-container\">";
 					
-						$button1 = "<span class=\"button\">View Record</span>";
-						$button2 = "<span class=\"button\">Edit</span>";
-						$button3 = "<span class=\"button\">Delete</span>";
-					
 						print "<div class=\"post\">";
 						print "<img src=\"$image\" width=\"200\" height=\"150\" \>";
 						print "</div>";
@@ -97,9 +93,9 @@
 						
 						print "<div class=\"post\">";	
 						print "<br /><br /><br /><br /><br />";
-						print "<a href=\"profile.php?petid=$row[pet_id]\">$button1</a>";
-						print "<a href=\"editform.php?petid=$row[pet_id]\">$button2</a>";
-						print "<a href=\"delete.php?petid=$row[pet_id]\">$button3</a>";
+						print "<a class=\"button\" href=\"profile.php?petid=$row[pet_id]\">View Record</a> ";
+						print "<a class=\"button\" href=\"editform.php?petid=$row[pet_id]\">Edit</a> ";
+						print "<a class=\"button\" href=\"delete.php?petid=$row[pet_id]\">Delete</a>";
 						print "</div>";
 					
 					print "</div>\r\n\r\n"; // end post container
@@ -149,8 +145,6 @@
 					
 					print "<div class=\"post-container\">";
 					
-						$button1 = "<span class=\"button\">View Record</span>";
-					
 						print "<div class=\"post\">";
 						print "<img src=\"$image\" width=\"200\" height=\"150\" \>";
 						print "</div>";
@@ -163,7 +157,7 @@
 						
 						print "<div class=\"post\">";	
 						print "<br /><br /><br /><br /><br />";
-						print "<a href=\"profile.php?petid=$row[pet_id]\">$button1</a>";
+						print "<a class=\"button\" href=\"profile.php?petid=$row[pet_id]\">View Record</a>";
 						print "</div>";
 					
 					print "</div>\r\n\r\n"; // end post container

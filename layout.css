@@ -82,6 +82,7 @@ body {
 	height: 100px;
 	line-height: 70px;
 	vertical-align: middle;
+	margin-top: 1em;
 }
 
 /* Class selectors */
@@ -140,16 +141,22 @@ input[type="reset"]:hover {
 .button {
 	background-color: #00A2E8;
 	color: white;
+	text-decoration: none;
 	padding: 0.5em 1em;
 	border: 1px solid darkblue;
 }
 
 .button:hover {
 	background-color: #3C46C8;
+	color: white;
 }
 
 /* Mobile devices */
 @media screen and (max-width: 640px), (max-device-width: 640px)  {
+	#banner {
+		width: 0px;
+	}
+	
 	#navbar li {
 		float: none;
 	}

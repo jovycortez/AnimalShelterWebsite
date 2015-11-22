@@ -81,8 +81,6 @@
 		// ..display only certain elements in this row
 		print "<div class=\"post-container\">";
 		
-			$button = "<span class=\"button\">View Record</span>";
-		
 			print "<div class=\"post\">";
 			print "<img src=\"$image\" width=\"200\" height=\"150\" \>";
 			print "</div>";
@@ -96,7 +94,7 @@
 			
 			print "<div class=\"post\">";	
 			print "<br /><br /><br /><br /><br />";
-			print "<a href=\"profile.php?petid=$row[pet_id]\">$button</a>";
+			print "<a class=\"button\" href=\"profile.php?petid=$row[pet_id]\">View Record</a>";
 			print "</div>";
 		
 		print "</div>\r\n\r\n"; // end post container
