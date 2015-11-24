@@ -83,7 +83,7 @@ Helping reunite pets with people since 2015 as a free community service.</p>
 <img src="images/dog1.jpg" class="dog1" alt="dog lying down on grass">
  <p> Did you lose a Pet? </p>
 <ul>
-	<li> <a class="found" href="PostForm.php">Post a Report </a> </li>
+	<li> <a class="found" href="postform.php">Post a Report </a> </li>
 	<li> <a class="found" href="found.php">Search Found Reports</a> </li>
 	
     <li> <a class="found" href="http://www.adoptapet.com/blog/free-and-easy-template-lost-or-found-pet-flye">Flyer Template for a Lost Pet</a> </li>
@@ -95,7 +95,7 @@ Helping reunite pets with people since 2015 as a free community service.</p>
 <img src="images/cat1.jpg" class="cat1" alt="cat sitting next to window" >
 <p> Did you find a Pet? </p>
 <ul style="text-align: left;">
-	<li> <a class="found" href="PostForm.php">Post a Report </a> </li>
+	<li> <a class="found" href="postform.php">Post a Report </a> </li>
 	<li> <a class="found" href="lost.php">Search Lost Reports</a> </li>
 	
 	<li> <a class="found" href="http://www.adoptapet.com/blog/free-and-easy-template-lost-or-found-pet-flye">Flier Template for a Found Pet</a> </li>

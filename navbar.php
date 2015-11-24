@@ -50,7 +50,7 @@ window.onload=swapImage;
 		<li><a href="found.php">Found Pets</a></li>
 		<li><a href="rescued.php">Adopt a Pet</a></li>
 		<li><a href="postform.php">Report</a></li>
-		<li><a href="faq.php">FAQ</a></li>
+		<li><a href="faq.php">FAQ / Tips</a></li>
 		<li><a href="searchform.php">Search</a></li>
 		<?php
 			if (isSet($_COOKIE["user_id"])) {

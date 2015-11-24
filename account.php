@@ -47,10 +47,14 @@
 				// Admin can see all posts
 				if ($isAdmin) {
 					$query = "SELECT * FROM pets
+							  INNER JOIN breed
+							  ON pets.breed_id = breed.breed_id
 							  ORDER BY date_found DESC";
 					
 				} else {
 					$query = "SELECT * FROM pets
+							  INNER JOIN breed
+							  ON pets.breed_id = breed.breed_id
 							  WHERE user_id = '$_COOKIE[user_id]'
 							  ORDER BY date_found DESC";
 				}
@@ -87,15 +91,16 @@
 						
 						print "<div class=\"post\"><br />";
 						print "<span class=\"title\">$row[color] $row[pet_type]</span><br />";
+						print "$row[breed_name]<br /><br />";
 						print "$row[section] around $row[city], $row[state]<br />";
 						print "on $row[date_found]";
 						print "</div>";
 						
-						print "<div class=\"post\">";	
+						print "<div class=\"post\">";
 						print "<br /><br /><br /><br /><br />";
 						print "<a class=\"button\" href=\"profile.php?petid=$row[pet_id]\">View Record</a> ";
 						print "<a class=\"button\" href=\"editform.php?petid=$row[pet_id]\">Edit</a> ";
-						print "<a class=\"button\" href=\"delete.php?petid=$row[pet_id]\">Delete</a>";
+						print "<a class=\"button-warning\" href=\"delete.php?petid=$row[pet_id]\">Delete</a>";
 						print "</div>";
 					
 					print "</div>\r\n\r\n"; // end post container
@@ -122,6 +127,8 @@
 				
 				// Find posts with this same zip code as user
 				$query = "SELECT * FROM pets
+						  INNER JOIN breed
+						  ON pets.breed_id = breed.breed_id
 						  WHERE zipcode='$zipcode' && user_id NOT LIKE $_COOKIE[user_id]
 						  ORDER BY section DESC, date_found DESC";
 						  
@@ -151,6 +158,7 @@
 						
 						print "<div class=\"post\"><br />";
 						print "<span class=\"title\">$row[color] $row[pet_type]</span><br />";
+						print "$row[breed_name]<br /><br />";
 						print "$row[section] around $row[city], $row[state]<br />";
 						print "on $row[date_found]";
 						print "</div>";

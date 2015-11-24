@@ -61,7 +61,7 @@ body {
 }
 
 #navbar a:hover {
-	background-color: #3C46C8;
+	background-color: #2980b9;
 }
 
 .account {
@@ -87,7 +87,7 @@ body {
 
 /* Class selectors */
 .wrapper {
-	width: 90%;
+	width: 80%;
 	margin: 0 auto;
 }
 
@@ -100,7 +100,6 @@ body {
 	margin: 0.5em 1em;
 	float: left;
 }
-
 
 .title {
 	font-weight: bold;
@@ -116,38 +115,45 @@ a:hover {
 }
 
 /* Form selectors and custom buttons */
-input[type="submit"] {
+.button, input[type="submit"] {
 	background-color: #00A2E8;
 	color: white;
+	text-decoration: none;
 	padding: 0.5em 1em;
-	border: 1px solid darkblue;
+	border: 0;
+	border-radius: 3px;
 }
 
-input[type="submit"]:hover {
-	background-color: #3C46C8;
+.button:hover, input[type="submit"]:hover {
+	background-color: #2980b9;
+	color: white;
 }
 
 input[type="reset"] {
 	background-color: lightgrey;
 	color: white;
+	text-decoration: none;
 	padding: 0.5em 1em;
-	border: 1px solid black;
+	border: 0;
+	border-radius: 3px;
 }
 
 input[type="reset"]:hover {
 	background-color: grey;
+	color: white;
 }
 
-.button {
-	background-color: #00A2E8;
+.button-warning {
+	background-color: #e74c3c;
 	color: white;
 	text-decoration: none;
 	padding: 0.5em 1em;
-	border: 1px solid darkblue;
+	border: 0;
+	border-radius: 3px;
 }
 
-.button:hover {
-	background-color: #3C46C8;
+.button-warning:hover {
+	background-color: #c0392b;
 	color: white;
 }
 

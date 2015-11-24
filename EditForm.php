@@ -16,6 +16,7 @@ if(!isset($_COOKIE["user_id"])){
 	<body>
 		<?php
 			include ('navbar.php');
+			print "<div class=\"wrapper\">";
 			include('kozycorner.dbconfig.inc');
 			
 			$petid = $_GET["petid"];
@@ -57,6 +58,7 @@ if(!isset($_COOKIE["user_id"])){
 			$date = $row['date_found'];
 			$description = $row['pet_description'];
 			$branch = $row['branch_id'];
+			$section = $row['section'];
 			
 			$image = "images/default.png";
 			print "<img src=\"$image\" width=\"200\" height=\"150\" \><br />";
@@ -76,14 +78,13 @@ if(!isset($_COOKIE["user_id"])){
 		?>
 		
 		<!--from filled with pre given information-->
-		<div class="wrapper">
 		<form action = "edit.php" method ="post">
 		
 		<table>
 		<tr>
-			<td> <input type = "radio"  name = "section" value = "Found" checked="checked"/>Found</td>
-			<td> <input type = "radio"  name = "section" value = "Lost" />Lost</td>
-			<td> <input type = "radio"  name = "section" value = "Rescued" />Rescued</td>
+			<td> <input type = "radio"  name = "section" value = "Lost" <?php if ($section == "Lost") { print "checked=\"checked\""; } ?> />Lost</td>
+			<td> <input type = "radio"  name = "section" value = "Found" <?php if ($section == "Found") { print "checked=\"checked\""; } ?> />Found</td>
+			<td> <input type = "radio"  name = "section" value = "Rescued" <?php if ($section == "Rescued") { print "checked=\"checked\""; } ?> />Rescued</td>
 		</tr>
 		</table>
 		
@@ -152,7 +153,7 @@ if(!isset($_COOKIE["user_id"])){
         </tr>
 		
 		<tr>
-			<td> Date Found: </td>  
+			<td> Date Lost/Found: </td>  
 			<td> <input type = "text"  name = "date" size = "10" maxlength="10" required pattern="^(\d{4})-(\d{1,2})-(\d{1,2})" placeholder="YYYY-MM-DD" value = "<?php print $date;?>" /></td>
         </tr>
 
