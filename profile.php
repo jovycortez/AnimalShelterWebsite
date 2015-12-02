@@ -57,6 +57,25 @@
 			print "<b>Date Found:</b> $row[date_found]<br />";
 			print "<b>Location Found:</b> $row[city], $row[state] $row[zipcode]<br />";
 			
+			$query = "SELECT * FROM users
+					  WHERE user_id='$row[user_id]'";
+			
+			// Run query
+			$result = mysqli_query($db, $query);
+			if (!$result) {
+				print "Error - the query could not be executed: " . mysqli_error($db);
+				exit;
+			}
+			
+			// Get information about $result object
+			$num_rows = mysqli_num_rows($result);
+			$num_fields = mysqli_num_fields($result);
+			$row = mysqli_fetch_assoc($result);
+			
+			print "<h2>Contact Info</h2>";
+			print "Email: $row[email]";
+			print "";
+			
 			?>
 		</div>
 		

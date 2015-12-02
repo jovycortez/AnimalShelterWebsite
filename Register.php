@@ -83,8 +83,7 @@
 	
 		<div class="wrapper">
 		<h2> Thanks for signing up!</h2>
-		<a href="home.php"> home </a><br/>
-		<a href="PostForm.php"> Report </a>
+		<a href="login.php">Click here to login</a><br />
 		</div>
 		
 		<?php include ('footer.php'); ?>
